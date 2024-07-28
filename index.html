@@ -162,42 +162,7 @@
 				#font-weight: bold;
 			}
 		</style>
-
-		<script>
-	
-		var agent = navigator.userAgent;
-		var firmware = "";
 		
-		if( agent.indexOf("PlayStation Vita") !== -1 ) {
-			firmware = agent.substring(agent.indexOf("5.0 (") + 22, agent.indexOf(") Apple"));
-		} else { // NOT A VITA
-			window.stop();
-			window.location.href = '../guide.psp2.dev/index.html';
-		}
-
-		var fw_min = "3.65";
-		var fw_max = "3.74";
-		
-		var unsupported = false;
-		var updateneeded = false;
-
-		if( firmware.localeCompare(fw_min) == -1 ) // firmware is lower than 3.65
-			updateneeded = true; 
-		if( firmware.localeCompare(fw_max) == 1 ) // firmware is higher than 3.74
-			unsupported = true;
-		
-		hideBar(); // to hide the address bar keep scrolling automatically
-
-		function hideBar() {
-			window.scrollBy(0,1);
-			scrolldelay = setTimeout(hideBar,10);
-		}
-	
-		function pagescroll(hide,show) {
-		  document.getElementById(hide).style.display = "none";
-		  document.getElementById(show).style.display = "";
-		} 
-		</script>
 	</head>
 	
 	<body>
